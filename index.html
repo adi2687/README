@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6e48aa;
-            --secondary: #9d50bb;
-            --accent: #4776E6;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
+            --primary: #8a63d2;
+            --secondary: #b07ae0;
+            --accent: #5d8ff6;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --dark-gray: #1e1e1e;
+            --medium-gray: #2d2d2d;
+            --light: #e0e0e0;
+            --lighter: #f5f5f5;
             --success: #2ecc71;
-            --warning: #f39c12;
+            --warning: #f1c40f;
             --danger: #e74c3c;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
         }
         
         * {
@@ -26,8 +32,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
-            color: #333;
-            background-color: #f5f7fa;
+            color: var(--text-primary);
+            background-color: var(--dark-gray);
             padding: 0;
             margin: 0;
         }
@@ -40,10 +46,10 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            background: var(--darker);
+            color: var(--text-primary);
             padding: 2rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
         
         .header-content {
@@ -75,7 +81,7 @@
         }
         
         nav a {
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -84,30 +90,30 @@
         }
         
         nav a:hover, nav a.active {
-            background-color: rgba(255,255,255,0.2);
+            background-color: var(--dark-gray);
         }
         
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 4rem 0;
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
-                        url('https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/I/mesh-network.jpg') center/cover;
+            background: var(--darker);
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
+            background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 2rem;
-            color: #555;
+            color: var(--text-secondary);
         }
         
         .cta-buttons {
@@ -130,24 +136,25 @@
         
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            color: var(--text-primary);
             border: none;
         }
         
         .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            background: transparent;
+            border: 1px solid var(--medium-gray);
+            color: var(--text-primary);
         }
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
         
         /* Features Section */
         .features {
             padding: 4rem 0;
-            background-color: #fff;
+            background-color: var(--dark-gray);
         }
         
         .section-title {
@@ -157,12 +164,12 @@
         
         .section-title h2 {
             font-size: 2.2rem;
-            color: var(--dark);
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
         
         .section-title p {
-            color: #666;
+            color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -175,17 +182,18 @@
         }
         
         .feature-card {
-            background: white;
+            background: var(--dark-gray);
             border-radius: 10px;
             padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
-            border: 1px solid #eee;
+            border: 1px solid var(--medium-gray);
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
         }
         
         .feature-icon {
@@ -197,13 +205,13 @@
         .feature-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--dark);
+            color: var(--text-primary);
         }
         
         /* Phases Section */
         .phases {
             padding: 4rem 0;
-            background-color: #f9f9ff;
+            background-color: var(--dark-gray);
         }
         
         .timeline {
@@ -242,9 +250,9 @@
         
         .phase-content {
             padding: 20px 30px;
-            background: white;
+            background: var(--dark-gray);
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             position: relative;
             border-left: 4px solid var(--primary);
         }
@@ -266,7 +274,7 @@
         /* Stack Section */
         .stack {
             padding: 4rem 0;
-            background-color: #fff;
+            background-color: var(--dark-gray);
         }
         
         .tech-stack {
@@ -287,12 +295,12 @@
             width: 80px;
             height: 80px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            color: white;
             font-size: 2rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
@@ -301,7 +309,7 @@
         .cta {
             padding: 4rem 0;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            color: var(--text-primary);
             text-align: center;
         }
         
@@ -319,8 +327,8 @@
         
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: #fff;
+            background-color: var(--dark-gray);
+            color: var(--light);
             padding: 3rem 0 1.5rem;
         }
         
@@ -332,7 +340,7 @@
         }
         
         .footer-column h3 {
-            color: #fff;
+            color: var(--light);
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
         }
@@ -346,13 +354,13 @@
         }
         
         .footer-links a {
-            color: #bbb;
+            color: var(--light);
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: #fff;
+            color: var(--light);
         }
         
         .social-links {
@@ -367,9 +375,9 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(30, 30, 30, 0.95);
             border-radius: 50%;
-            color: #fff;
+            color: var(--light);
             transition: all 0.3s ease;
         }
         
@@ -378,11 +386,30 @@
             transform: translateY(-3px);
         }
         
+        .made-by {
+            text-align: center;
+            padding: 1.5rem 0 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .made-by a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .made-by a:hover {
+            color: var(--primary);
+        }
+        
         .copyright {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #bbb;
+            padding: 1rem 0 0;
+            border-top: 1px solid var(--medium-gray);
+            margin-top: 1rem;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
         
@@ -422,12 +449,6 @@
                 padding: 15px;
             }
         }
-            /* Text gradient for hero heading with cross-browser support */
-        .hero h1 {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
     </style>
 </head>
 <body>
@@ -437,7 +458,7 @@
             <div class="logo">
                 <i class="fas fa-network-wired"></i>
                 <div>
-                    <div>DecentraWeb</div>
+                    <div>PiperNet</div>
                     <div class="tagline">The Future of the Decentralized Internet</div>
                 </div>
             </div>
@@ -472,7 +493,7 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose DecentraWeb?</h2>
+                <h2>Why Choose PiperNet?</h2>
                 <p>We're building the next generation of the internet - one that respects your privacy and puts you in control.</p>
             </div>
             <div class="features-grid">
@@ -692,8 +713,11 @@
                     </ul>
                 </div>
             </div>
+            <div class="made-by">
+                <p>Made with ❤️ by Aditya Kurani</p>
+            </div>
             <div class="copyright">
-                <p>&copy; 2025 DecentraWeb. All rights reserved. | Decentralized for everyone, everywhere.</p>
+                <p>&copy; 2025 PiperNet. All rights reserved. | Decentralized for everyone, everywhere.</p>
             </div>
         </div>
     </footer>
